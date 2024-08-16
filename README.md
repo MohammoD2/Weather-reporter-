@@ -1,4 +1,4 @@
-#Weather Reporter\
+#Weather Reporter
 
 ##Overview
 The "Weather Reporter" Streamlit app provides real-time weather information by fetching data from a weather API. The app allows users to enter a location and receive detailed weather updates, including temperature, humidity, and weather conditions. Additionally, the app can read the weather information out loud using text-to-speech.
