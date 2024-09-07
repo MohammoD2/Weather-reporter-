@@ -9,15 +9,6 @@ def fetch_weather(city):
     response = requests.get(url)
     return json.loads(response.text)
 
-def speak_weather_report(city, temp_c, temp_f, condition, time):
-    """Convert weather report to speech."""
-    engine = pyttsx3.init()
-    report = (f"Now telling about the weather report of {city}. In {time}, "
-              f"It's temperature is {temp_c} degrees Celsius or {temp_f} degrees Fahrenheit. "
-              f"The weather of {city} is {condition}.")
-    engine.say(report)
-    engine.runAndWait()
-
 def main():
     st.title("Weather Report App")
 
@@ -39,16 +30,5 @@ def main():
         st.write(f"**Temperature:** {temp_c}°C / {temp_f}°F")
         st.write(f"**Condition:** {condition}")
         st.write(f"**Last Updated:** {time}")
-
-        # Text-to-Speech button
-        if st.button("Read Weather Report Aloud"):
-            speak_weather_report(city, temp_c, temp_f, condition, time)
-            st.success("Weather report is being read aloud!")
-
 if __name__ == "__main__":
     main()
-
-
-
-
-
