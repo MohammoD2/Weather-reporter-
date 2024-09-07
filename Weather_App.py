@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import json
-
+st.title("☁️Weather App☁️")
 
 def fetch_weather(city):
     """Fetch weather data from the API."""
