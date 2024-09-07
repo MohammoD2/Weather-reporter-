@@ -11,7 +11,7 @@ def fetch_weather(city):
 
 def main():
     st.set_page_config(
-        page_title="☁️Weather Report App☁️",
+        page_title="Weather Report App",
         page_icon="☁️",
         layout="centered",
         initial_sidebar_state="expanded"
