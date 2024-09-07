@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import json
-import pyttsx3
+
 
 def fetch_weather(city):
     """Fetch weather data from the API."""
