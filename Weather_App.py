@@ -16,7 +16,7 @@ def main():
         layout="centered",
         initial_sidebar_state="expanded"
     )
-    st.title("Weather Report App")
+    st.title("Weather Report App ☁️🌞")
 
     # Custom CSS for styling the container
     st.markdown(
@@ -56,7 +56,7 @@ def main():
     )
 
     # Input field for city
-    city = st.text_input("Enter your city name:")
+    city = st.text_input("Enter your city name 🌍:")
 
     if city:
         # Fetch weather data
@@ -68,16 +68,29 @@ def main():
         condition = weather_data["current"]["condition"]["text"]
         time = weather_data["current"]["last_updated"]
 
+        # Emojis for weather condition
+        if "sun" in condition.lower():
+            condition_emoji = "☀️"
+        elif "cloud" in condition.lower():
+            condition_emoji = "☁️"
+        elif "rain" in condition.lower():
+            condition_emoji = "🌧️"
+        elif "snow" in condition.lower():
+            condition_emoji = "❄️"
+        else:
+            condition_emoji = "🌤️"
+
         # Create a weather container with all details
         st.markdown(f"""
         <div class="weather-container">
-            <h3>Weather Report for {city}</h3>
-            <p class="temp">Temperature: {temp_c}°C / {temp_f}°F</p>
-            <p class="condition">Condition: {condition}</p>
-            <p class="last-updated">Last Updated: {time}</p>
+            <h3>Weather Report for {city} {condition_emoji}</h3>
+            <p class="temp">🌡️ Temperature: {temp_c}°C / {temp_f}°F</p>
+            <p class="condition">Weather Condition: {condition} {condition_emoji}</p>
+            <p class="last-updated">🕒 Last Updated: {time}</p>
         </div>
         """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
+
 
